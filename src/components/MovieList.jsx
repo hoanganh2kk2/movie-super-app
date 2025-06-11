@@ -61,7 +61,7 @@ const MovieList = ({ title, data }) => {
     <div className="text-white p-10 mb-10">
       <h2 className="uppercase text-xl mb-4">{title}</h2>
       <Carousel responsive={responsive} className="flex items-center space-x-4">
-        {data.length > 0 &&
+        {data & (data.length > 0) &&
           data.map((item) => (
             <div
               key={item.id}
@@ -100,12 +100,12 @@ const MovieList = ({ title, data }) => {
             right: "auto",
             bottom: "auto",
             marginRight: "-50%",
-            transform: "transLate(-50%, -50%)",
+            transform: "translate(-50%, -50%)",
           },
         }}
         contentLabel="Example Modal"
       >
-        <YouTube videoId={trailerKey} opts={opts} />;
+        <YouTube videoId={trailerKey} opts={opts} />
       </Modal>
     </div>
   );
